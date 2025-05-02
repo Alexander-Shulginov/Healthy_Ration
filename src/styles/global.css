@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #64d370;
+  --color-bg: #f5faff;
+
+  --font-base: "Montserrat Variable", sans-serif;
+  --font-second: "Comfortaa Variable", sans-serif;
+
+  --shadow-base: 0 0 40px 0 rgba(86, 86, 86, 0.3);
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+}
