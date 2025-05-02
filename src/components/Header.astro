@@ -23,9 +23,15 @@ const linkList = [
 ];
 ---
 
-<header class="mt-13 flex">
-    <a href="/"> </a>
-    <nav class="ml-auto px-10 py-4 rounded-[190px] shadow-base">
+<header class="mt-13 max-w-[1170px] mx-auto flex relative gap-5">
+    <a class="bg-bg shadow-base rounded-full w-[264px] h-[264px] flex items-center absolute left-[-65px] top-[50%] translate-y-[-50%]" href="/">
+        <div>
+            <img src="/logo.svg" alt="Company logo">
+            <div class="text-sm text-center text-dark font-second">healthy ration</div>
+        </div>
+    </a>
+    
+    <nav class="flex-2 px-10 py-4 rounded-[190px] shadow-base">
         <ul class="flex gap-10 justify-end">
             {
                 linkList.map((link) => (
