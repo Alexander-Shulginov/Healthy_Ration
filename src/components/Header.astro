@@ -1,42 +1,19 @@
 ---
-const linkList = [
-    {
-        text: 'Программы питания',
-        to: '#',
-    },
-    {
-        text: 'Бизнес-ланчи',
-        to: '#',
-    },
-    {
-        text: 'Gastro Shop',
-        to: '#',
-    },
-    {
-        text: 'О нас',
-        to: '#',
-    },
-    {
-        text: 'Блог',
-        to: '#',
-    },
-];
+import linkList from '@/data/menu.json';
+import Logo from '@/components/ui/Logo.astro';
 ---
 
-<header class="mt-13 max-w-[1170px] mx-auto flex relative gap-5">
-    <a class="bg-bg shadow-base rounded-full w-[264px] h-[264px] flex items-center absolute left-[-65px] top-[50%] translate-y-[-50%]" href="/">
-        <div>
-            <img src="/logo.svg" alt="Company logo">
-            <div class="text-sm text-center text-dark font-second">healthy ration</div>
-        </div>
+<header class="mt-13 sm:px-3 px-4 max-w-[1170px] mx-auto flex relative gap-5">
+    <a class="bg-bg hidden shadow-base rounded-full w-[164px] h-[164px] xl:w-[264px] xl:h-[264px] lg:flex items-center absolute left-[10px] top-[50%] translate-y-[-50%] xl:left-[-65px]" href="/">
+        <Logo text="healthy ration" />
     </a>
-    
+
     <nav class="flex-2 px-10 py-4 rounded-[190px] shadow-base">
-        <ul class="flex gap-10 justify-end">
+        <ul class="flex gap-5 lg:gap-10 justify-between lg:justify-end">
             {
                 linkList.map((link) => (
-                    <li>
-                        <a class="hover:text-accent focus:text-accent transition-colors" href={link.to}>
+                    <li class="shrink-0">
+                        <a class="hover:text-accent focus:text-accent text-[12px] lg:text-sm transition-colors" href={link.to}>
                             {link.text}
                         </a>
                     </li>
@@ -44,5 +21,6 @@ const linkList = [
             }
         </ul>
     </nav>
-    <a class="text-accent font-bold text-xl px-7.5 bg-bg shadow-base rounded-[190px] flex items-center hover:text-bg hover:bg-accent transition-colors" href="tel:+0000000000">+9 (553) 685-53-28</a>
+
+    <a class="text-accent font-bold text-sm lg:text-xl px-7.5 bg-bg shadow-base rounded-[190px]  shrink-0 flex items-center hover:text-bg hover:bg-accent transition-colors" href="tel:+0000000000">+9 (553) 685-53-28</a>
 </header>
