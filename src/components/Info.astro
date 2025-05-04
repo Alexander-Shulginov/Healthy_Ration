@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const data = [
+    {
+        icon: 'eco',
+        text: 'Бережём природу. <br> Эко-тара и проборы.',
+    },
+    {
+        icon: 'menu',
+        text: '28 дней без повторения, <br> более 300 блюд!',
+    },
+    {
+        icon: 'fork',
+        text: 'Бесплатно заменяем <br> блюда и ингредиенты.',
+    },
+    {
+        icon: 'night',
+        text: 'Готовим ночью, упаковываем<br> и отправляем Вам!',
+    },
+    {
+        icon: 'fast',
+        text: 'Ежедневная удобная <br> и бесплатная доставка <br> с 6:00 до 10:00',
+    },
+    {
+        icon: 'time',
+        text: 'Сохраняем Вашу энергию <br> и до 14 часов в неделю <br> освобождая от готовки!',
+    },
+];
+---
+
+<section class="mt-50">
+    <div class="container">
+        <ul class="grid grid-cols-2 gap-x-4 sm:grid-cols-3 xl:grid-cols-6 gap-y-8 xl:gap-y-15">
+            {
+                data.map((item) => (
+                    <li class="flex flex-col items-center gap-3 text-center">
+                        <Icon name={item.icon} class="md:w-[60px] md:h-[60px] w-[40px] h-[40px]" />
+                        <span class="text-sm md:text-sm text-dark font-medium" set:html={item.text} />
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>

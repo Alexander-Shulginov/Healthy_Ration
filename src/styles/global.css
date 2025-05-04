@@ -1,18 +1,30 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-dark: #020202;
-  --color-accent: #64d370;
-  --color-bg: #f5faff;
-  /* --color-bg: gray; */
+    --color-dark: #020202;
+    --color-accent: #64d370;
+    --color-bg: #f5faff;
+    /* --color-bg: gray; */
 
-  --font-base: "Montserrat Variable", sans-serif;
-  --font-second: "Comfortaa Variable", sans-serif;
+    --font-base: 'Montserrat Variable', sans-serif;
+    --font-second: 'Comfortaa Variable', sans-serif;
 
-  --shadow-base: 0 0 40px 0 rgba(86, 86, 86, 0.3);
+    --shadow-base: 0 0 40px 0 rgba(86, 86, 86, 0.3);
 }
 
 body {
-  font-family: var(--font-base);
-  background-color: var(--color-bg);
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 7px;
+    }
 }
