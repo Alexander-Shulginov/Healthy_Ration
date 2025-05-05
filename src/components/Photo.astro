@@ -1,0 +1,30 @@
+---
+import Image from 'astro/components/Image.astro';
+
+import foodImg_1 from '@/assets/img/food-1.jpg';
+import foodImg_2 from '@/assets/img/food-2.jpg';
+import foodImg_3 from '@/assets/img/food-3.jpg';
+import foodImg_4 from '@/assets/img/food-4.jpg';
+import foodImg_5 from '@/assets/img/food-5.jpg';
+import foodImg_6 from '@/assets/img/food-6.jpg';
+
+const images = [foodImg_1, foodImg_2, foodImg_3, foodImg_4, foodImg_5, foodImg_6];
+---
+
+<section class="mb-25 lg:mb-38 overflow-hidden">
+    <h2 class="font-second text-[18px] lg:text-[30px] font-bold text-center mb-7.5 lg:mb-15">Фото блюд</h2>
+    <div class="flex gap-5  [animation:scroll-left_60s_linear_infinite]">
+        {images.map((img) => <Image src={img} width={img.width} height={img.height} quality={85} densities={[1, 2]} alt="Food photo" class="rounded-[30px] shadow-base aspect-[3/4]" />)}
+    </div>
+</section>
+
+<style>
+    @keyframes scroll-left {
+        0% {
+            /* transform: translateX(0%); */
+        }
+        100% {
+            /* transform: translateX(-100%); */
+        }
+    }
+</style>

@@ -29,13 +29,13 @@ const data = [
 ];
 ---
 
-<section class="mt-50">
+<section class="lg:mb-25 mb-12.5">
     <div class="container">
         <ul class="grid grid-cols-2 gap-x-4 sm:grid-cols-3 xl:grid-cols-6 gap-y-8 xl:gap-y-15">
             {
                 data.map((item) => (
                     <li class="flex flex-col items-center gap-3 text-center">
-                        <Icon name={item.icon} class="md:w-[60px] md:h-[60px] w-[40px] h-[40px]" />
+                        <Icon name={`info/${item.icon}`} class="md:w-[60px] md:h-[60px] w-[40px] h-[40px]" />
                         <span class="text-sm md:text-sm text-dark font-medium" set:html={item.text} />
                     </li>
                 ))
