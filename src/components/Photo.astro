@@ -11,10 +11,10 @@ import foodImg_6 from '@/assets/img/food-6.jpg';
 const images = [foodImg_1, foodImg_2, foodImg_3, foodImg_4, foodImg_5, foodImg_6];
 ---
 
-<section class="mb-25 lg:mb-38 overflow-hidden">
+<section class="pb-25 lg:pb-38 overflow-hidden">
     <h2 class="font-second text-[18px] lg:text-[30px] font-bold text-center mb-7.5 lg:mb-15">Фото блюд</h2>
     <div class="flex gap-5  [animation:scroll-left_60s_linear_infinite]">
-        {images.map((img) => <Image src={img} width={img.width} height={img.height} quality={85} densities={[1, 2]} alt="Food photo" class="rounded-[30px] shadow-base aspect-[3/4]" />)}
+        {images.map((img) => <Image src={img} width={img.width} height={img.height} quality={85} densities={[1, 2]} alt="Food photo" class="rounded-[30px] shadow-base aspect-[3/4] object-cover" />)}
     </div>
 </section>
 
