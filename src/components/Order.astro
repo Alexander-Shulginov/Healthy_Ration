@@ -1,15 +1,43 @@
 <div>
     <h3 class="text-center text-dark font-bold font-second text-[20px] md:text-[25px] lg:text-[30px] mb-2">Оформить заказ</h3>
-    <p class="text-center text-sm md:text-md text-dark">Обсудите все детали заказа по телефону <br /> или сами укажите все подробности онлайн</p>
+    <p class="text-center text-sm mb-5 md:mb-7.5 md:text-md text-dark">Обсудите все детали заказа по телефону <br /> или сами укажите все подробности онлайн</p>
 
     <form>
-        <div class="relative">
-            <label for="input-name">Имя</label>
-            <input class="bg-[#dee6ee] rounded-[190px] " type="text" id="input-name" required />
-            <div>
-                <div class="bg-accent w-[14px] h-[14px] rounded-full"></div>
-                <div class="bg-red-500 w-[14px] h-[14px] rounded-full"></div>
+        <div class="mb-7.5">
+            <label class="font-bold font-second mb-2 block ml-3 text-[18px]" for="input-name">Имя</label>
+            <div class="relative">
+                <input class="bg-[#dee6ee] w-full rounded-[190px] py-2.5 pl-4 pr-8 text-dark outline-none" type="text" id="input-name" required />
+                <div class="absolute right-[15px] top-[50%] translate-y-[-50%]">
+                    <!-- <div class="bg-accent w-[14px] h-[14px] rounded-full"></div> -->
+                    <!-- <div class="bg-red-500 w-[14px] h-[14px] rounded-full"></div> -->
+                </div>
             </div>
         </div>
+
+        <div class="mb-[30px]">
+            <label class="font-bold font-second mb-2 block ml-3 text-[18px]" for="input-phone">Номер телефона</label>
+            <div class="relative">
+                <input class="bg-[#dee6ee] w-full rounded-[190px] py-2.5 pl-4 pr-8 text-dark outline-none" type="text" id="input-phone" required />
+                <div class="absolute right-[15px] top-[50%] translate-y-[-50%]">
+                    <!-- <div class="bg-accent w-[14px] h-[14px] rounded-full"></div> -->
+                    <!-- <div class="bg-red-500 w-[14px] h-[14px] rounded-full"></div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 lg:gap-5 mb-2.5 lg:mb-4">
+            <div class="relative w-[26px] h-[26px]">
+                <input type="checkbox" required checked name="discount" id="checkbox-discount" class="peer appearance-none w-full h-full cursor-pointer bg-[#dee6ee] rounded-full" />
+                <span class="pointer-events-none w-[12px] h-[12px] bg-green-500 rounded-full transition-transform duration-200 hidden peer-checked:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] items-center justify-center"></span>
+            </div>
+            <label class="font-bold text-dark font-second" for="checkbox-discount">Тест-день! Получить скидку -30%?</label>
+        </div>
     </form>
+    <div class="flex items-center gap-3 lg:gap-5">
+        <div class="relative w-[26px] h-[26px]">
+            <input type="checkbox" required checked name="policy" id="checkbox-policy" class="peer appearance-none w-full h-full cursor-pointer bg-[#dee6ee] rounded-full" />
+            <span class="pointer-events-none w-[12px] h-[12px] bg-green-500 rounded-full transition-transform duration-200 hidden peer-checked:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] items-center justify-center"></span>
+        </div>
+        <label class="font-bold text-dark font-second" for="checkbox-policy"> Согласен с <a href="#" class="text-accent">условиями сотрудничества</a></label>
+    </div>
 </div>
