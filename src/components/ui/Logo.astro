@@ -1,8 +1,7 @@
 ---
-const { text } = Astro.props;
+import { Icon } from 'astro-icon/components';
+
+const { w, h } = Astro.props;
 ---
 
-<div>
-    <img src="/icons/logo.svg" width="290" height="120" alt="Company logo" />
-    <div class="text-sm text-center text-dark font-second">{text}</div>
-</div>
+<Icon name="logo" width={w || 120} height={h || 75} />
