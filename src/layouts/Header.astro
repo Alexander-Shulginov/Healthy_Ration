@@ -4,12 +4,12 @@ import Logo from '@/components/ui/Logo.astro';
 ---
 
 <header class="mt-13 sm:px-3 px-4 max-w-[1170px] mx-auto flex relative gap-5">
-    <a class="bg-bg hidden shadow-base rounded-full w-[164px] h-[164px] xl:w-[264px] xl:h-[264px] lg:flex items-center justify-center absolute left-[10px] top-[50%] translate-y-[-50%] xl:left-[-65px]" href="/">
-        <Logo text="healthy ration" w={125} h={85} />
+    <a class="bg-bg shadow-base rounded-full flex items-center justify-center px-4" href="/">
+        <Logo text="healthy ration" w={100} />
     </a>
 
     <nav class="flex-2 px-10 py-4 rounded-[190px] shadow-base">
-        <ul class="flex gap-5 lg:gap-10 justify-between lg:justify-end">
+        <ul class="flex gap-5 lg:gap-10 justify-between">
             {
                 linkList.map((link) => (
                     <li class="shrink-0">
