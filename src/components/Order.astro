@@ -25,26 +25,26 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-3 lg:gap-5 mb-2.5 lg:mb-4">
+        <div class="cursor-pointer flex items-center gap-3 lg:gap-5 mb-2.5 lg:mb-4">
             <div class="relative w-[26px] h-[26px]">
-                <input type="checkbox" required checked name="discount" id="checkbox-discount" class="peer appearance-none w-full h-full cursor-pointer bg-[#dee6ee] rounded-full" />
+                <input type="checkbox" required checked name="discount" id="checkbox-discount" class="peer appearance-none w-full h-full bg-[#dee6ee] rounded-full" />
                 <span class="pointer-events-none w-[12px] h-[12px] bg-green-500 rounded-full transition-transform duration-200 hidden peer-checked:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] items-center justify-center"></span>
             </div>
             <label class="font-bold text-dark font-second" for="checkbox-discount">Тест-день! Получить скидку -30%?</label>
         </div>
 
-        <div class="flex items-center gap-3 lg:gap-5">
+        <div class="cursor-pointer flex items-center gap-3 lg:gap-5 mb-7.5">
             <div class="relative w-[26px] h-[26px]">
-                <input type="checkbox" required checked name="policy" id="checkbox-policy" class="peer appearance-none w-full h-full cursor-pointer bg-[#dee6ee] rounded-full" />
+                <input type="checkbox" required checked name="policy" id="checkbox-policy" class="peer appearance-none w-full h-full bg-[#dee6ee] rounded-full" />
                 <span class="pointer-events-none w-[12px] h-[12px] bg-green-500 rounded-full transition-transform duration-200 hidden peer-checked:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] items-center justify-center"></span>
             </div>
             <label class="font-bold text-dark font-second" for="checkbox-policy"> Согласен с <a href="#" class="text-accent">условиями сотрудничества</a></label>
         </div>
 
-        <div class="flex flex-col gap-2">
-            <button type="submit">Заказ по телефону</button>
+        <div class="flex lg:flex-col md:flex-row md:justify-around flex-col gap-2 items-center">
+            <button class="text-nowrap font-second max-w-[300px] w-full py-3 border-accent border-3 rounded-[190px] cursor-pointer hover:bg-accent hover:text-white transition-colors text-accent font-bold lg:text-[24px] md:text-[20px] text-[18px]" type="submit">Заказ по телефону</button>
             <span class="text-center font-second lg:text-[22px] text-[18px] font-bold">Или</span>
-            <button type="submit">Онлайн заказ</button>
+            <button class="px-11 py-3 bg-accent max-w-[300px] w-full rounded-[190px] cursor-pointer border-3 border-transparent hover:bg-transparent hover:text-accent hover:border-accent transition-colors font-second text-white font-bold lg:text-[24px] md:text-[20px] text-[18px]" type="submit">Онлайн заказ</button>
         </div>
     </form>
 </div>
