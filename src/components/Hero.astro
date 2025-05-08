@@ -1,3 +1,56 @@
-<h1>
+<script>
+    import Swiper from 'swiper';
+    import 'swiper/css/bundle';
 
-</h1>
+    new Swiper('.swiper', {
+        loop: true,
+    });
+</script>
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="title">
+                Detox программа – <br />
+                <span>вкусное очищение</span>
+                <br /> организма
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="title">
+                Сервис правильного <br /> питания. <br />
+                <span>Худей быстро!</span>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="title">
+                Кето питание - <br />
+                <span> вкусное и быстрое</span>
+                <br /> похудение
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="title">
+                Правильное питание - <br />
+                <span>секрет долголетия</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import 'tailwindcss';
+
+    @layer title {
+        .title {
+            font-family: var(--font-second);
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 1.1;
+        }
+
+        .title span {
+            color: var(--color-accent);
+        }
+    }
+</style>
