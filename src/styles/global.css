@@ -28,3 +28,31 @@ body {
         padding: 0 7px;
     }
 }
+
+.swiper-pagination-bullet {
+    background: transparent;
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--color-accent);
+}
+
+.swiper-pagination-bullet-active {
+    border: none;
+    background-image: conic-gradient(var(--color-accent) var(--progress), var(--color-bg) 0%, var(--color-bg) 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.swiper-pagination-bullet-active::after {
+    content: '';
+    width: 70%;
+    height: 70%;
+    outline: 3px solid #64d36f40;
+    outline-offset: 1px;
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}

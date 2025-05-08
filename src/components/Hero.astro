@@ -1,39 +1,71 @@
 <script>
     import Swiper from 'swiper';
+    import { Pagination, Navigation, Autoplay } from 'swiper/modules';
     import 'swiper/css/bundle';
 
+
     new Swiper('.swiper', {
+        modules: [Pagination, Navigation, Autoplay],
         loop: true,
+        speed: 1200,
+        autoplay: {
+            delay: 10000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                const te = document.querySelector('.swiper-pagination-bullet-active');
+                if (te) {
+                    const percentage = Math.ceil((1 - progress) * 100);
+                    //@ts-ignore
+                    te.style.setProperty('--progress', `${percentage}%`);
+                }
+            },
+        },
     });
 </script>
 
-<div class="swiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="title">
-                Detox программа – <br />
-                <span>вкусное очищение</span>
-                <br /> организма
+
+<div class="mb-20">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="title">
+                    Detox программа – <br />
+                    <span>вкусное очищение</span>
+                    <br /> организма
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title">
+                    Сервис правильного <br /> питания. <br />
+                    <span>Худей быстро!</span>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title">
+                    Кето питание - <br />
+                    <span> вкусное и быстрое</span>
+                    <br /> похудение
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title">
+                    Правильное питание - <br />
+                    <span>секрет долголетия</span>
+                </div>
             </div>
         </div>
-        <div class="swiper-slide">
-            <div class="title">
-                Сервис правильного <br /> питания. <br />
-                <span>Худей быстро!</span>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="title">
-                Кето питание - <br />
-                <span> вкусное и быстрое</span>
-                <br /> похудение
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="title">
-                Правильное питание - <br />
-                <span>секрет долголетия</span>
-            </div>
+        <div class="relative flex items-center w-[160px] mx-auto">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
 </div>
@@ -53,4 +85,28 @@
             color: var(--color-accent);
         }
     }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: static;
+        color: var(--color-accent);
+        margin-top: unset;
+        height: unset;
+        width: unset;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .swiper-pagination {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
 </style>
