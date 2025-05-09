@@ -1,16 +1,22 @@
+---
+import Image from 'astro/components/Image.astro';
+
+import img_1 from '@/assets/img/hero-1.jpg';
+---
+
 <script>
     import Swiper from 'swiper';
     import { Pagination, Navigation, Autoplay } from 'swiper/modules';
     import 'swiper/css/bundle';
 
-
     new Swiper('.swiper', {
         modules: [Pagination, Navigation, Autoplay],
         loop: true,
         speed: 1200,
-        autoplay: {
-            delay: 10000,
-        },
+        // autoplay: {
+        // delay: 10000,
+        // },
+        spaceBetween: 26,
         pagination: {
             el: '.swiper-pagination',
         },
@@ -31,17 +37,22 @@
     });
 </script>
 
-
-<div class="mb-20">
-    <div class="swiper">
+<div class="mb-20 relative">
+    <div class="swiper container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="title">
-                    Detox программа – <br />
-                    <span>вкусное очищение</span>
-                    <br /> организма
+                <div class="w-full flex justify-between relative">
+                    <div class="title">
+                        Detox программа – <br />
+                        <span>вкусное очищение</span>
+                        <br /> организма
+                    </div>
+                    <div>
+                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full outline-[36px] outline-white" />
+                    </div>
                 </div>
             </div>
+
             <div class="swiper-slide">
                 <div class="title">
                     Сервис правильного <br /> питания. <br />
@@ -68,6 +79,8 @@
             <div class="swiper-button-next"></div>
         </div>
     </div>
+
+    <div class="size-[1200px] bg-accent rounded-full absolute -top-[50%] left-[55%] -z-1"></div>
 </div>
 
 <style>
@@ -107,6 +120,4 @@
         justify-content: center;
         align-items: center;
     }
-
-
 </style>
