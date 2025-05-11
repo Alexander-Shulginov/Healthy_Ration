@@ -6,16 +6,17 @@ import img_1 from '@/assets/img/hero-1.jpg';
 
 <script>
     import Swiper from 'swiper';
-    import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+    import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper/modules';
     import 'swiper/css/bundle';
 
     new Swiper('.swiper', {
-        modules: [Pagination, Navigation, Autoplay],
+        modules: [Pagination, Navigation, Autoplay, EffectFade],
         loop: true,
         speed: 1200,
         // autoplay: {
         // delay: 10000,
         // },
+        effect: 'fade',
         spaceBetween: 26,
         pagination: {
             el: '.swiper-pagination',
@@ -37,8 +38,8 @@ import img_1 from '@/assets/img/hero-1.jpg';
     });
 </script>
 
-<div class="mb-20 relative">
-    <div class="swiper container">
+<div class="mb-20 relative tcontainer">
+    <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="w-full flex justify-between relative">
@@ -80,7 +81,7 @@ import img_1 from '@/assets/img/hero-1.jpg';
         </div>
     </div>
 
-    <div class="size-[1200px] bg-accent rounded-full absolute -top-[50%] left-[55%] -z-1"></div>
+    <!-- <div class="size-[1200px] bg-accent rounded-full absolute -top-[50%] left-[55%] -z-1"></div> -->
 </div>
 
 <style>
@@ -119,5 +120,11 @@ import img_1 from '@/assets/img/hero-1.jpg';
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .tcontainer {
+        padding-left: calc((100% - 1300px) / 2);
+        margin-left: 15px;
+        padding-right: 5%;
     }
 </style>
