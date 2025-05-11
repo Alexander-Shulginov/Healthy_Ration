@@ -50,6 +50,7 @@ import img_1 from '@/assets/img/hero-1.jpg';
                             <br /> организма
                         </div>
                         <p class="descr">Только натуральные ингридиенты</p>
+                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
                     <div>
                         <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
@@ -58,32 +59,50 @@ import img_1 from '@/assets/img/hero-1.jpg';
             </div>
 
             <div class="swiper-slide bg-bg">
-                <div class="self-center shrink-0">
-                    <div class="title">
-                        Сервис правильного <br /> питания. <br />
-                        <span>Худей быстро!</span>
+                <div class="w-full flex justify-between gap-10 relative">
+                    <div class="self-center shrink-0">
+                        <div class="title">
+                            Сервис правильного <br /> питания. <br />
+                            <span>Худей быстро!</span>
+                        </div>
+                        <p class="descr">4 приемы пищи</p>
+                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
-                    <p class="descr">4 приемы пищи</p>
+                    <div>
+                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                    </div>
                 </div>
             </div>
             <div class="swiper-slide bg-bg">
-                <div class="self-center shrink-0">
-                    <div class="title">
-                        Кето питание - <br />
-                        <span> вкусное и быстрое</span>
-                        <br /> похудение
+                <div class="w-full flex justify-between gap-10 relative">
+                    <div class="self-center shrink-0">
+                        <div class="title">
+                            Кето питание - <br />
+                            <span> вкусное и быстрое</span>
+                            <br /> похудение
+                        </div>
+                        <p class="descr">Только современный подход</p>
+                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
-                    <p class="descr">Современный подход</p>
-                </div>  
+                    <div>
+                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                    </div>
+                </div>
             </div>
             <div class="swiper-slide bg-bg">
-                <div class="self-center shrink-0">
-                    <div class="title">
-                        Правильное питание - <br />
-                        <span>секрет долголетия</span>
+                <div class="w-full flex justify-between gap-10 relative">
+                    <div class="self-center shrink-0">
+                        <div class="title">
+                            Правильное питание - <br />
+                            <span>секрет долголетия</span>
+                        </div>
+                        <p class="descr">Профессиональные решения</p>
+                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
-                    <p class="descr">Профессиональные решения</p>
-                </div>  
+                    <div>
+                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                    </div>
+                </div>
             </div>
         </div>
         <div class="relative flex items-center w-[160px] mx-auto">
@@ -119,6 +138,8 @@ import img_1 from '@/assets/img/hero-1.jpg';
             font-family: var(--font-second);
             font-size: 18px;
             line-height: 1.1;
+
+            margin-bottom: 24px;
         }
 
         .descr span {
