@@ -12,11 +12,11 @@ import img_1 from '@/assets/img/hero-1.jpg';
     new Swiper('.swiper', {
         modules: [Pagination, Navigation, Autoplay, EffectFade],
         loop: true,
-        speed: 1200,
+        speed: 1000,
         // autoplay: {
         // delay: 10000,
         // },
-        effect: 'fade',
+        // effect: 'fade',
         spaceBetween: 26,
         pagination: {
             el: '.swiper-pagination',
@@ -38,40 +38,52 @@ import img_1 from '@/assets/img/hero-1.jpg';
     });
 </script>
 
-<div class="mb-20 relative tcontainer">
-    <div class="swiper">
+<div class="mb-20 relative">
+    <div class="swiper container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="w-full flex justify-between relative">
-                    <div class="title">
-                        Detox программа – <br />
-                        <span>вкусное очищение</span>
-                        <br /> организма
+            <div class="swiper-slide bg-bg">
+                <div class="w-full flex justify-between gap-10 relative">
+                    <div class="self-center shrink-0">
+                        <div class="title">
+                            Detox программа – <br />
+                            <span>вкусное очищение</span>
+                            <br /> организма
+                        </div>
+                        <p class="descr">Только натуральные ингридиенты</p>
                     </div>
                     <div>
-                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full outline-[36px] outline-white" />
+                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
                     </div>
                 </div>
             </div>
 
-            <div class="swiper-slide">
-                <div class="title">
-                    Сервис правильного <br /> питания. <br />
-                    <span>Худей быстро!</span>
+            <div class="swiper-slide bg-bg">
+                <div class="self-center shrink-0">
+                    <div class="title">
+                        Сервис правильного <br /> питания. <br />
+                        <span>Худей быстро!</span>
+                    </div>
+                    <p class="descr">4 приемы пищи</p>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="title">
-                    Кето питание - <br />
-                    <span> вкусное и быстрое</span>
-                    <br /> похудение
-                </div>
+            <div class="swiper-slide bg-bg">
+                <div class="self-center shrink-0">
+                    <div class="title">
+                        Кето питание - <br />
+                        <span> вкусное и быстрое</span>
+                        <br /> похудение
+                    </div>
+                    <p class="descr">Современный подход</p>
+                </div>  
             </div>
-            <div class="swiper-slide">
-                <div class="title">
-                    Правильное питание - <br />
-                    <span>секрет долголетия</span>
-                </div>
+            <div class="swiper-slide bg-bg">
+                <div class="self-center shrink-0">
+                    <div class="title">
+                        Правильное питание - <br />
+                        <span>секрет долголетия</span>
+                    </div>
+                    <p class="descr">Профессиональные решения</p>
+                </div>  
             </div>
         </div>
         <div class="relative flex items-center w-[160px] mx-auto">
@@ -93,9 +105,23 @@ import img_1 from '@/assets/img/hero-1.jpg';
             font-weight: 700;
             font-size: 40px;
             line-height: 1.1;
+
+            margin-bottom: 16px;
         }
 
         .title span {
+            color: var(--color-accent);
+        }
+    }
+
+    @layer descr {
+        .descr {
+            font-family: var(--font-second);
+            font-size: 18px;
+            line-height: 1.1;
+        }
+
+        .descr span {
             color: var(--color-accent);
         }
     }
