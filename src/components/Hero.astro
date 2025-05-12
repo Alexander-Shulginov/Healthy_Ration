@@ -1,7 +1,10 @@
 ---
 import Image from 'astro/components/Image.astro';
 
-import img_1 from '@/assets/img/hero-1.jpg';
+import img_1 from '@/assets/img/intro/intro-1.jpg';
+import img_2 from '@/assets/img/intro/intro-2.jpg';
+import img_3 from '@/assets/img/intro/intro-3.jpg';
+import img_4 from '@/assets/img/intro/intro-4.jpg';
 ---
 
 <script>
@@ -42,7 +45,7 @@ import img_1 from '@/assets/img/hero-1.jpg';
     <div class="swiper container">
         <div class="swiper-wrapper">
             <div class="swiper-slide bg-bg">
-                <div class="w-full flex justify-between gap-10 relative">
+                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
                     <div class="self-center shrink-0">
                         <div class="title">
                             Detox программа – <br />
@@ -53,13 +56,13 @@ import img_1 from '@/assets/img/hero-1.jpg';
                         <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
                     <div>
-                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                        <Image src={img_1} alt="Food image" width={img_1.width} densities={[1.5, 2, 3]} height={img_1.height} fetchpriority={'high'} loading={'eager'} class="rounded-full size-[100%]  border-[36px] object-cover aspect-[1] border-accent" />
                     </div>
                 </div>
             </div>
 
             <div class="swiper-slide bg-bg">
-                <div class="w-full flex justify-between gap-10 relative">
+                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
                     <div class="self-center shrink-0">
                         <div class="title">
                             Сервис правильного <br /> питания. <br />
@@ -69,12 +72,12 @@ import img_1 from '@/assets/img/hero-1.jpg';
                         <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
                     <div>
-                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                        <Image src={img_2} alt="Food image" width={img_2.width} height={img_2.height} densities={[1.5, 2, 3]} class="rounded-full size-[100%] border-[36px] object-cover aspect-[1] border-accent" />
                     </div>
                 </div>
             </div>
             <div class="swiper-slide bg-bg">
-                <div class="w-full flex justify-between gap-10 relative">
+                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
                     <div class="self-center shrink-0">
                         <div class="title">
                             Кето питание - <br />
@@ -85,22 +88,22 @@ import img_1 from '@/assets/img/hero-1.jpg';
                         <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
                     <div>
-                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                        <Image src={img_3} alt="Food image" width={img_3.width} height={img_3.height} densities={[1.5, 2, 3]} class="rounded-full object-cover aspect-[1] size-[100%] border-[36px] border-accent" />
                     </div>
                 </div>
             </div>
             <div class="swiper-slide bg-bg">
-                <div class="w-full flex justify-between gap-10 relative">
+                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
                     <div class="self-center shrink-0">
                         <div class="title">
-                            Правильное питание - <br />
+                            Правильное <br> питание <br />
                             <span>секрет долголетия</span>
                         </div>
-                        <p class="descr">Профессиональные решения</p>
+                        <p class="descr">Доверьтесь профессионалам</p>
                         <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
                     <div>
-                        <Image src={img_1} alt="Food image" width={img_1.width} height={img_1.height} class="rounded-full size-[100%] scale-80 border-[36px] border-accent" />
+                        <Image src={img_4} alt="Food image" width={img_4.width} height={img_4.height} densities={[1.5, 2, 3]} class="rounded-full object-cover aspect-[1] size-[100%] border-[36px] border-accent" />
                     </div>
                 </div>
             </div>
