@@ -1,10 +1,10 @@
 ---
-import Image from 'astro/components/Image.astro';
+import Image from 'astro/components/Image.astro'
 
-import img_1 from '@/assets/img/intro/intro-1.jpg';
-import img_2 from '@/assets/img/intro/intro-2.jpg';
-import img_3 from '@/assets/img/intro/intro-3.jpg';
-import img_4 from '@/assets/img/intro/intro-4.jpg';
+import img_1 from '@/assets/img/intro/intro-1.jpg'
+import img_2 from '@/assets/img/intro/intro-2.jpg'
+import img_3 from '@/assets/img/intro/intro-3.jpg'
+import img_4 from '@/assets/img/intro/intro-4.jpg'
 
 const introItems = [
     {
@@ -27,41 +27,43 @@ const introItems = [
         descr: 'Доверьтесь профессионалам',
         image: img_4,
     },
-];
+]
 ---
 
 <script>
-    import Swiper from 'swiper';
-    import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper/modules';
-    import 'swiper/css/bundle';
+    import Swiper from 'swiper'
+    import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper/modules'
+    import 'swiper/css/bundle'
 
-    new Swiper('.swiper', {
-        modules: [Pagination, Navigation, Autoplay, EffectFade],
-        loop: true,
-        speed: 500,
-        // autoplay: {
-        //     delay: 5000,
-        // },
-        effect: 'fade',
-        spaceBetween: 26,
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        on: {
-            autoplayTimeLeft(s, time, progress) {
-                const te = document.querySelector('.swiper-pagination-bullet-active');
-                if (te) {
-                    const percentage = Math.ceil((1 - progress) * 100);
-                    //@ts-ignore
-                    te.style.setProperty('--progress', `${percentage}%`);
-                }
+    document.addEventListener('DOMContentLoaded', () => {
+        new Swiper('.swiper', {
+            modules: [Pagination, Navigation, Autoplay, EffectFade],
+            loop: true,
+            speed: 500,
+            // autoplay: {
+            //     delay: 5000,
+            // },
+            effect: 'fade',
+            spaceBetween: 26,
+            pagination: {
+                el: '.swiper-pagination',
             },
-        },
-    });
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                autoplayTimeLeft(s, time, progress) {
+                    const te = document.querySelector('.swiper-pagination-bullet-active')
+                    if (te) {
+                        const percentage = Math.ceil((1 - progress) * 100)
+                        //@ts-ignore
+                        te.style.setProperty('--progress', `${percentage}%`)
+                    }
+                },
+            },
+        })
+    })
 </script>
 
 <div class="relative mb-20">
@@ -113,11 +115,21 @@ const introItems = [
             font-size: 40px;
             line-height: 1.1;
 
+            opacity: 0;
+            transition:
+                transform 0.4s ease-in-out,
+                opacity 0.8s ease-in-out;
+
             margin-bottom: 16px;
         }
 
         .title span {
             color: var(--color-accent);
+        }
+
+        .swiper-slide-active .title {
+            transform: translateY(-10px);
+            opacity: 1;
         }
 
         @media (max-width: 1024px) {
@@ -140,10 +152,21 @@ const introItems = [
             line-height: 1.1;
 
             margin-bottom: 24px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition:
+                transform 0.4s ease-in-out,
+                opacity 0.8s ease-in-out;
+            transition-delay: 0.2s;
         }
 
         .descr span {
             color: var(--color-accent);
+        }
+
+        .swiper-slide-active .descr {
+            transform: translateY(0px);
+            opacity: 1;
         }
 
         @media (max-width: 1024px) {
