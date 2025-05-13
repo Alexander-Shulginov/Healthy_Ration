@@ -5,6 +5,29 @@ import img_1 from '@/assets/img/intro/intro-1.jpg';
 import img_2 from '@/assets/img/intro/intro-2.jpg';
 import img_3 from '@/assets/img/intro/intro-3.jpg';
 import img_4 from '@/assets/img/intro/intro-4.jpg';
+
+const introItems = [
+    {
+        title: 'Detox программа – <br /> <span>вкусное очищение</span> <br /> организма',
+        descr: 'Только натуральные ингридиенты',
+        image: img_1,
+    },
+    {
+        title: 'Сервис правильного <br /> питания. <br /> <span>Худей быстро!</span>',
+        descr: '4 приемы пищи',
+        image: img_2,
+    },
+    {
+        title: 'Кето питание - <br /> <span>вкусное и быстрое</span> <br /> похудение',
+        descr: 'Только современный подход',
+        image: img_3,
+    },
+    {
+        title: 'Правильное <br /> питание <br /> <span>секрет долголетия</span>',
+        descr: 'Доверьтесь профессионалам',
+        image: img_4,
+    },
+];
 ---
 
 <script>
@@ -43,70 +66,25 @@ import img_4 from '@/assets/img/intro/intro-4.jpg';
 
 <div class="mb-20 relative">
     <div class="swiper container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide bg-bg">
-                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
-                    <div class="self-center shrink-0">
-                        <div class="title">
-                            Detox программа – <br />
-                            <span>вкусное очищение</span>
-                            <br /> организма
+        <div class="swiper-wrapper mb-15">
+            {
+                introItems.map((item) => (
+                    <div class="swiper-slide bg-bg">
+                        <div class="w-full grid grid-cols-1 sm:grid-cols-[1.5fr_1fr] lg:grid-cols-2 justify-between gap-10 relative">
+                            <div class="self-center shrink-0">
+                                <div class="title" set:html={item.title} />
+                                <p class="descr" set:html={item.descr} />
+                                <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">
+                                    Заказать
+                                </a>
+                            </div>
+                            <div class=" h-[200px] sm:h-auto -order-1 sm:order-none">
+                                <Image src={item.image} alt="Food image" width={item.image.width} densities={[1.5, 2, 3]} height={item.image.height} fetchpriority={'high'} loading={'eager'} class=" rounded-2xl sm:rounded-full size-[100%] border-[6px] sm:border-[18px] lg:border-[36px] object-cover aspect-[1] border-accent" />
+                            </div>
                         </div>
-                        <p class="descr">Только натуральные ингридиенты</p>
-                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
                     </div>
-                    <div>
-                        <Image src={img_1} alt="Food image" width={img_1.width} densities={[1.5, 2, 3]} height={img_1.height} fetchpriority={'high'} loading={'eager'} class="rounded-full size-[100%]  border-[36px] object-cover aspect-[1] border-accent" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide bg-bg">
-                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
-                    <div class="self-center shrink-0">
-                        <div class="title">
-                            Сервис правильного <br /> питания. <br />
-                            <span>Худей быстро!</span>
-                        </div>
-                        <p class="descr">4 приемы пищи</p>
-                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
-                    </div>
-                    <div>
-                        <Image src={img_2} alt="Food image" width={img_2.width} height={img_2.height} densities={[1.5, 2, 3]} class="rounded-full size-[100%] border-[36px] object-cover aspect-[1] border-accent" />
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide bg-bg">
-                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
-                    <div class="self-center shrink-0">
-                        <div class="title">
-                            Кето питание - <br />
-                            <span> вкусное и быстрое</span>
-                            <br /> похудение
-                        </div>
-                        <p class="descr">Только современный подход</p>
-                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
-                    </div>
-                    <div>
-                        <Image src={img_3} alt="Food image" width={img_3.width} height={img_3.height} densities={[1.5, 2, 3]} class="rounded-full object-cover aspect-[1] size-[100%] border-[36px] border-accent" />
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide bg-bg">
-                <div class="w-full grid grid-cols-2 justify-between gap-10 relative">
-                    <div class="self-center shrink-0">
-                        <div class="title">
-                            Правильное <br> питание <br />
-                            <span>секрет долголетия</span>
-                        </div>
-                        <p class="descr">Доверьтесь профессионалам</p>
-                        <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">Заказать</a>
-                    </div>
-                    <div>
-                        <Image src={img_4} alt="Food image" width={img_4.width} height={img_4.height} densities={[1.5, 2, 3]} class="rounded-full object-cover aspect-[1] size-[100%] border-[36px] border-accent" />
-                    </div>
-                </div>
-            </div>
+                ))
+            }
         </div>
         <div class="relative flex items-center w-[160px] mx-auto">
             <div class="swiper-button-prev"></div>
@@ -114,11 +92,9 @@ import img_4 from '@/assets/img/intro/intro-4.jpg';
             <div class="swiper-button-next"></div>
         </div>
     </div>
-
-    <!-- <div class="size-[1200px] bg-accent rounded-full absolute -top-[50%] left-[55%] -z-1"></div> -->
 </div>
 
-<style>
+<style is:global>
     @import 'tailwindcss';
 
     @layer title {
@@ -134,6 +110,18 @@ import img_4 from '@/assets/img/intro/intro-4.jpg';
         .title span {
             color: var(--color-accent);
         }
+
+        @media (max-width: 1024px) {
+            .title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 24px;
+            }
+        }
     }
 
     @layer descr {
@@ -148,33 +136,17 @@ import img_4 from '@/assets/img/intro/intro-4.jpg';
         .descr span {
             color: var(--color-accent);
         }
-    }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        position: static;
-        color: var(--color-accent);
-        margin-top: unset;
-        height: unset;
-        width: unset;
-    }
+        @media (max-width: 1024px) {
+            .descr {
+                font-size: 16px;
+            }
+        }
 
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 24px;
-        font-weight: 700;
-    }
-
-    .swiper-pagination {
-        position: static;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tcontainer {
-        padding-left: calc((100% - 1300px) / 2);
-        margin-left: 15px;
-        padding-right: 5%;
+        @media (max-width: 768px) {
+            .descr {
+                font-size: 14px;
+            }
+        }
     }
 </style>
