@@ -3,26 +3,25 @@ import faq from '@/data/faq.json';
 ---
 
 <div>
-    <h3 class="font-second font-bold mb-5 lg:mb-9 text-center lg:text-[25px]">Часто задаваемые вопросы</h3>
+    <h3 class="font-second mb-5 text-center font-bold lg:mb-9 lg:text-[25px]">Часто задаваемые вопросы</h3>
 
     {
         faq.map((item, index) => (
             <div>
-                <button class="accordion-btn cursor-pointer  w-full flex justify-between items-center py-2.5 px-5 rounded-[190px] text-left text-dark text-sm md:text-md tracking-[0.03em] shadow-base">
+                <button class="accordion-btn text-dark md:text-md shadow-base flex w-full cursor-pointer items-center justify-between rounded-[190px] px-5 py-2.5 text-left text-sm tracking-[0.03em]">
                     <span>{item.question}</span>
                     <span id={`icon-${index + 1}`} class="text-slate-800 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4">
                             <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
                         </svg>
                     </span>
                 </button>
-                <div id={`content-${index + 1}`} class="max-h-0 my-3  overflow-hidden transition-all duration-300 ease-in-out">
-                    <div class="rounded-[10px] bg-green-200  text-sm text-dark py-2.5 px-5">{item.answer}</div>
+                <div id={`content-${index + 1}`} class="my-3 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="text-dark rounded-[10px] bg-green-200 px-5 py-2.5 text-sm">{item.answer}</div>
                 </div>
             </div>
         ))
     }
-    
 </div>
 
 <script is:inline>

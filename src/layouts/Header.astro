@@ -1,19 +1,19 @@
 ---
-import linkList from '@/data/menu.json';
-import Logo from '@/components/ui/Logo.astro';
+import linkList from '@/data/menu.json'
+import Logo from '@/components/ui/Logo.astro'
 ---
 
-<header class="mt-7 mb-20 sm:px-3 px-4 max-w-[1170px] mx-auto flex items-center justify-between relative gap-3">
-    <a class="bg-bg shadow-base py-4 rounded-full flex items-center justify-center px-4" href="/">
+<header class="relative mx-auto mt-7 mb-8 flex max-w-[1170px] items-center justify-between gap-3 px-4 sm:px-3 md:mb-15 lg:mb-20">
+    <a class="bg-bg shadow-base flex items-center justify-center rounded-full px-4 py-4" href="/">
         <Logo text="healthy ration" w={100} />
     </a>
 
-    <nav id="burger-menu" class="absolute hidden bg-bg top-20 w-[97%] translate-x-[-50%] lg:translate-none z-2 left-[50%] lg:w-auto lg:static lg:flex px-8 xl:px-13 py-4 lg:rounded-[190px] shadow-base">
-        <ul class="lg:flex-row items-center flex-col flex gap-2 lg:gap-10 justify-between">
+    <nav id="burger-menu" class="bg-bg shadow-base absolute top-20 left-[50%] z-15 hidden w-[97%] translate-x-[-50%] px-8 py-4 lg:static lg:flex lg:w-auto lg:translate-none lg:rounded-[190px] xl:px-13">
+        <ul class="flex flex-col items-center justify-between gap-2 lg:flex-row lg:gap-10">
             {
                 linkList.map((link) => (
                     <li class="shrink-0">
-                        <a class="hover:text-accent focus:text-accent text-md lg:text-sm transition-colors" href={link.to}>
+                        <a class="hover:text-accent focus:text-accent text-md transition-colors lg:text-sm" href={link.to}>
                             {link.text}
                         </a>
                     </li>
@@ -22,11 +22,21 @@ import Logo from '@/components/ui/Logo.astro';
         </ul>
     </nav>
 
-    <a class="text-accent ml-auto lg:ml-0 py-4.5 font-bold text-sm px-7.5 bg-bg shadow-base rounded-[190px] shrink-0 hidden sm:flex items-center hover:text-bg hover:bg-accent transition-colors" href="tel:+0000000000">+9 (553) 685-53-28</a>
+    <a class="text-accent bg-bg shadow-base hover:text-bg hover:bg-accent ml-auto hidden shrink-0 items-center rounded-[190px] px-7.5 py-4.5 text-sm font-bold transition-colors sm:flex lg:ml-0" href="tel:+0000000000">+9 (553) 685-53-28</a>
 
-    <button id="burger-btn" class="group cursor-pointer inline-flex lg:hidden w-12 h-12 text-accent shadow-base text-center items-center justify-center rounded hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition" aria-pressed="false" onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))">
-        <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="8" height="2" rx="1"></rect>
+    <button
+        id="burger-btn"
+        class="group bg-bg text-accent shadow-base z-20 inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded text-center transition lg:hidden"
+        aria-pressed="false"
+        onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))"
+    >
+        <svg class="pointer-events-none h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect
+                class="origin-center translate-x-[7px] -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
+                y="7"
+                width="8"
+                height="2"
+                rx="1"></rect>
             <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45" y="7" width="16" height="2" rx="1"></rect>
             <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]" y="7" width="8" height="2" rx="1"></rect>
         </svg>
@@ -34,12 +44,13 @@ import Logo from '@/components/ui/Logo.astro';
 </header>
 
 <script>
-    const burgerBtn = document.querySelector('#burger-btn');
-    const burgerMenu = document.querySelector('#burger-menu');
+    const burgerBtn = document.querySelector('#burger-btn')
+    const burgerMenu = document.querySelector('#burger-menu')
 
     if (burgerBtn && burgerMenu) {
         burgerBtn.addEventListener('click', () => {
-            burgerMenu.classList.toggle('hidden');
-        });
+            burgerMenu.classList.toggle('hidden')
+            document.getElementById('overlay')?.classList.toggle('bg-black/50')
+        })
     }
 </script>

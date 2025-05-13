@@ -1,0 +1,7 @@
+{
+    "tabWidth": 4,
+    "printWidth": 256,
+    "singleQuote": true,
+    "semi": false,
+    "plugins": ["prettier-plugin-astro","prettier-plugin-tailwindcss"]
+}

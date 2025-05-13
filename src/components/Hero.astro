@@ -64,29 +64,38 @@ const introItems = [
     });
 </script>
 
-<div class="mb-20 relative">
+<div class="relative mb-20">
     <div class="swiper container">
-        <div class="swiper-wrapper mb-15">
+        <div class="swiper-wrapper mb-8 lg:mb-15">
             {
                 introItems.map((item) => (
                     <div class="swiper-slide bg-bg">
-                        <div class="w-full grid grid-cols-1 sm:grid-cols-[1.5fr_1fr] lg:grid-cols-2 justify-between gap-10 relative">
-                            <div class="self-center shrink-0">
+                        <div class="relative grid w-full grid-cols-1 justify-between gap-5 sm:grid-cols-[1.5fr_1fr] lg:grid-cols-2 lg:gap-10">
+                            <div class="shrink-0 self-center">
                                 <div class="title" set:html={item.title} />
                                 <p class="descr" set:html={item.descr} />
-                                <a href="#" class="rounded-[190px] bg-accent text-bg font-bold text-xl cursor-pointer py-3 px-12 inline-block">
+                                <a href="#" class="bg-accent text-bg inline-block cursor-pointer rounded-[190px] px-12 py-3 text-xl font-bold">
                                     Заказать
                                 </a>
                             </div>
-                            <div class=" h-[200px] sm:h-auto -order-1 sm:order-none">
-                                <Image src={item.image} alt="Food image" width={item.image.width} densities={[1.5, 2, 3]} height={item.image.height} fetchpriority={'high'} loading={'eager'} class=" rounded-2xl sm:rounded-full size-[100%] border-[6px] sm:border-[18px] lg:border-[36px] object-cover aspect-[1] border-accent" />
+                            <div class="-order-1 h-[200px] sm:order-none sm:h-auto">
+                                <Image
+                                    src={item.image}
+                                    alt="Food image"
+                                    width={item.image.width}
+                                    densities={[1.5, 2, 3]}
+                                    height={item.image.height}
+                                    fetchpriority={'high'}
+                                    loading={'eager'}
+                                    class="border-accent aspect-[1] size-[100%] rounded-2xl border-[6px] object-cover sm:rounded-full sm:border-[18px] lg:border-[36px]"
+                                />
                             </div>
                         </div>
                     </div>
                 ))
             }
         </div>
-        <div class="relative flex items-center w-[160px] mx-auto">
+        <div class="relative mx-auto flex w-[160px] items-center">
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
